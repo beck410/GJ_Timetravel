@@ -7,7 +7,11 @@
       templateUrl: 'views/dino.html',
       controller: 'dinosaurController',
       controllerAs: 'dino'
+    })
+    .when('/', {
+      template: '',
+      controller: 'mainController',
+      controllerAs: 'main'
     });
   });
 })();
-

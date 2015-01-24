@@ -1,0 +1,45 @@
+@mixin box-decoration-break($input) {
+  -webkit-box-decoration-break: $input;
+  box-decoration-break: $input;
+}
+
+@mixin clip-path($input) {
+  -webkit-clip-path: $input;
+  clip-path: $input;
+}
+
+@mixin text-decoration($input) {
+  -webkit-text-decoration: $input;
+  -moz-text-decoration: $input;
+  text-decoration: $input;
+}
+
+@mixin filter($input) {
+  -webkit-filter: $input;
+  filter: $input;
+}
+
+@mixin filter($input) {
+  -webkit-hyphens: $input;
+  -moz-hyphens: $input;
+  -ms-hyphens: $input;
+  hyphens: $input;
+}
+
+@mixin placeholder($left, $right) {
+  &::-webkit-input-placeholder {
+    $left: $right;
+  }
+
+  &:-moz-placeholder {
+    $left: $right;
+  }
+
+  &::-moz-placeholder {
+    $left: $right;
+  }
+
+  :-ms-input-placeholder {
+    $left: $right;
+ }
+}

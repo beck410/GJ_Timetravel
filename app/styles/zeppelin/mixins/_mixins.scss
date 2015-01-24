@@ -1,0 +1,161 @@
+//HELPERS
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+@mixin size($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin side-margin($number) {
+  margin-left: $number;
+  margin-right: $number;
+}
+
+@mixin vert-margin($number) {
+  margin-top: $number;
+  margin-bottom: $number;
+}
+
+@mixin side-pad($number) {
+  padding-left: $number;
+  padding-right: $number;
+}
+
+@mixin vert-pad($number) {
+  padding-top: $number;
+  padding-bottom: $number;
+}
+
+//LAYOUT
+@mixin center {
+  @include side-margin(auto);
+  text-align: center;
+}
+
+@mixin container($size: 960px) {
+  max-width: $size;
+  @include center();
+}
+
+
+@mixin span($columns) {
+  box-sizing: border-box;
+  margin-right: $gutter;
+  margin-left: $gutter;
+  @if $columns == 1 {
+    width: (100%/12) - (($gutter + .25) *2);
+  } @else if $columns == 2 {
+    width: (100%/6) - (($gutter + .25) *2);
+  } @else if $columns == 3 {
+    width: 25% - (($gutter + .25) *2);
+  } @else if $columns == 4 {
+    width: (100%/3) - (($gutter + .25) *2);
+  } @else if $columns == 5 {
+    width: (100%/2.4) - (($gutter + .25) *2);
+  } @else if $columns == 6 {
+    width: 50% - (($gutter + .25) *2);
+  } @else if $columns == 7 {
+    width: (100%/1.71428571) - (($gutter + .25) *2);
+  } @else if $columns == 8 {
+    width: 66.6666666% - (($gutter + .25) *2);
+  } @else if $columns == 9 {
+    width: 75% - (($gutter + .25) *2);
+  } @else if $columns == 10 {
+    width: (100%/1.2) - (($gutter + .25) *2);
+  } @else if $columns == 11 {
+    width: (100%/1.09090909) - (($gutter + .25) *2);
+  } @else if $columns == 12 {
+    width: 100% - (($gutter + .25) *2);
+    @include clearfix;
+  }
+}
+
+@mixin row () {
+  @include span(12);
+}
+
+@mixin slide($columns) {
+  @if $columns == 1 {
+    margin-left: (100%/12) + $gutter;
+  } @else if $columns == 2 {
+    margin-left: (100%/6)+ $gutter;
+  } @else if $columns == 3 {
+    margin-left: 25% + $gutter;
+  } @else if $columns == 4 {
+    margin-left: (100%/3) + $gutter;
+  } @else if $columns == 5 {
+    margin-left: (100%/2.4) + $gutter;
+  } @else if $columns == 6 {
+    margin-left: 50% + $gutter;
+  } @else if $columns == 7 {
+    margin-left: (100%/1.71428571) + $gutter;
+  } @else if $columns == 8 {
+    margin-left: 66.6666666% + $gutter;
+  } @else if $columns == 9 {
+    margin-left: 75% + $gutter;
+  } @else if $columns == 10 {
+    margin-left: (100%/1.2) + $gutter;
+  } @else if $columns == 11 {
+    margin-left: (100%/1.09090909) + $gutter;
+  } @else if $columns == -1 {
+    margin-right: (100%/12) + $gutter;
+  } @else if $columns == -2 {
+    margin-right: (100%/6)+ $gutter;
+  } @else if $columns == -3 {
+    margin-right: 25% + $gutter;
+  } @else if $columns == -4 {
+    margin-right: (100%/3) + $gutter;
+  } @else if $columns == -5 {
+    margin-right: (100%/2.4) + $gutter;
+  } @else if $columns == -6 {
+    margin-right: 50% + $gutter;
+  } @else if $columns == -7 {
+    margin-right: (100%/1.71428571) + $gutter;
+  } @else if $columns == -8 {
+    margin-right: 66.6666666% + $gutter;
+  } @else if $columns == -9 {
+    margin-right: 75% + $gutter;
+  } @else if $columns == -10 {
+    margin-right: (100%/1.2) + $gutter;
+  } @else if $columns == -11 {
+    margin-right: (100%/1.09090909) + $gutter;
+  }
+}
+
+
+// SHAPES
+@mixin circle($size) {
+  @include size($size);
+  border-radius: $size / 2;
+}
+
+@mixin triangle($width, $height, $color, $direction) {
+  @include size(0);
+  background-color: transparent;
+  @if $direction == up {
+    border-bottom: $height solid $color;
+    border-left: $width/2 solid transparent;
+    border-right: $width/2 solid transparent;
+
+  } @else if $direction == right {
+    border-bottom: $width/2 solid transparent;
+    border-left: $height solid $color;
+    border-top: $width/2 solid transparent;
+
+  } @else if $direction == down {
+    border-left: $width/2 solid transparent;
+    border-right: $width/2 solid transparent;
+    border-top: $height solid $color;
+
+  } @else if $direction == left {
+    border-bottom: $width/2 solid transparent;
+    border-right: $height solid $color;
+    border-top: $width/2 solid transparent;
+  }
+}
