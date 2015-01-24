@@ -3,10 +3,10 @@
   angular.module('ttt')
   .config(function($routeProvider){
     $routeProvider
-    .when('/emu',{
+    .when('/dino',{
       templateUrl: 'view/emu.html',
-      controller: 'emuController',
-      controllerAs: 'emu'
+      controller: 'dinosaurController',
+      controllerAs: 'dino'
     });
   });
 })();

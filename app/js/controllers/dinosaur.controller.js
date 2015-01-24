@@ -1,12 +1,12 @@
 ;(function(){
   'use strict'; 
   angular.module('ttt')
-  .controller('emuController',function(){
-    var emuImg = $('.emu');
+  .controller('dinosaurController',function(){
+    var dinoImg = $('.dino');
     var martaImg = $('.marta');
     var bgImg = $('.body');
-    var choices = $('.buttonwap');
-    var textbox; 
+    var choices = $('.buttonwrap');
+    var textbox = $('.textbox'); 
 
     function(optionA){
         
