@@ -33,7 +33,6 @@ var game = (function() {
   return {
     randomizer: randomizer,
     arrowInterval: arrowInterval,
-    arrowFlash: arrowFlash,
     clearArrowInterval: clearArrowInterval
   };
 }());
