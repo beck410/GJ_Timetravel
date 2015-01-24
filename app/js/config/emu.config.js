@@ -1,10 +1,10 @@
 ;(function(){
   'use strict';
-  angular.module('ttt')
+  angular.module('TTT')
   .config(function($routeProvider){
     $routeProvider
     .when('/emu',{
-      templateUrl: 'view/emu.html',
+      templateUrl: 'views/emu.html',
       controller: 'emuController',
       controllerAs: 'emu'
     });
