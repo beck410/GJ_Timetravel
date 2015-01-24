@@ -1,17 +1,21 @@
 ;(function() {
   "use strict";
 
-  angular.module("TTT", ["ngRoute"] )
+  angular.module("TTT", [ "ngRoute" ])
+  .controller("mainController", function($location) {
+    $location.path("/" + game.randomizer());
 
+  });
 
-}()); //end of of iife
+}());
 
 var game = (function() {
   "use strict";
   var levels = ["emu", "van", "dinosaur"];
 
   function randomizer() {
-    return Math.floor(Math.random * levels.length);
+    var selection = levels.splice(Math.floor(Math.random() * levels.length), 1);
+    return selection
   }
 
   function arrowInterval() {
