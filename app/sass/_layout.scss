@@ -1,0 +1,43 @@
+body {
+  max-width: 1280px;
+  height:auto;
+  margin: 0 auto;
+}
+
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+  *zoom: 1;
+}
+
+.body{
+  height: 400px;
+  width: 100%;
+  background-color: blue;
+}
+
+.textbox{
+  height: 150px;
+  width: 100%;
+  background-color: #222;
+  color: #fdfdfd;
+  font-family: "Munro";
+}
+
+.buttonwrap{
+  height: 50px;
+  width: 100%;
+  background-color: purple;
+}

@@ -3,22 +3,11 @@
   src: url(MunroNarrow.ttf)
 }
 
-.body{
-  height: 400px;
-  width: 100%;
-  background-color: blue;
-}
+/* imports */
+@import 'dino';
+@import 'layout';
+@import 'emu';
+@import 'van';
+@import 'start';
+@import 'end';
 
-.textbox{
-  height: 150px;
-  width: 100%;
-  background-color: #222;
-  color: #fdfdfd;
-  font-family: "Munro";
-}
-
-.buttonwrap{
-  height: 50px;
-  width: 100%;
-  background-color: purple;
-}
