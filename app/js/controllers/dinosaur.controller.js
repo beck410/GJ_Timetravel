@@ -1,6 +1,6 @@
 ;(function(){
   'use strict'; 
-  angular.module('ttt')
+  angular.module('TTT')
   .controller('dinosaurController',function(){
     var dinoImg = $('.dino');
     var martaImg = $('.marta');
@@ -8,13 +8,13 @@
     var choices = $('.buttonwrap');
     var textbox = $('.textbox'); 
 
-    function(optionA){
+    // function(optionA){
         
-    }
+    // }
 
-    function(optionB){
+    // function(optionB){
       
-    }
+    // }
 
 
   });

@@ -1,6 +1,6 @@
 ;(function(){
   'use strict'; 
-  angular.module('ttt')
+  angular.module('TTT')
   .controller('emuController',function(){
     var emuImg = $('.emu');
     var martaImg = $('.marta');
@@ -8,13 +8,13 @@
     var choices = $('.buttonwap');
     var textbox; 
 
-    function(optionA){
+    // function(optionA){
         
-    }
+    // }
 
-    function(optionB){
+    // function(optionB){
       
-    }
+    // }
 
 
   });

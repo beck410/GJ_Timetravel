@@ -1,10 +1,10 @@
 ;(function(){
   'use strict';
-  angular.module('ttt')
+  angular.module('TTT')
   .config(function($routeProvider){
     $routeProvider
     .when('/dino',{
-      templateUrl: 'view/emu.html',
+      templateUrl: 'views/dino.html',
       controller: 'dinosaurController',
       controllerAs: 'dino'
     });
