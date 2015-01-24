@@ -23,7 +23,7 @@ var game = (function() {
   }
 
   function arrowFlash() {
-    $(".arrow").toggle;
+    $(".arrow").toggle();
   }
 
   function clearArrowInterval(func) {
