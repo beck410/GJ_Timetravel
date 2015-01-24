@@ -1,8 +1,13 @@
-angular.module("TTT",["ng-route"])
+;(function() {
+  "use strict";
 
-game = (function(){
-  'use strict'
+  angular.module("TTT", ["ngRoute"] )
 
+
+}()); //end of of iife
+
+var game = (function() {
+  "use strict";
   var levels = ["emu", "van", "dinosaur"];
 
   function randomizer() {
@@ -17,9 +22,14 @@ game = (function(){
     $(".arrow").toggle;
   }
 
-  function clearArrowInterval(function) {
-    clearInterval(function);
+  function clearArrowInterval(func) {
+    clearInterval(func);
   }
 
-  return;
-})();
+  return {
+    randomizer: randomizer,
+    arrowInterval: arrowInterval,
+    arrowFlash: arrowFlash,
+    clearArrowInterval: clearArrowInterval
+  };
+}());
