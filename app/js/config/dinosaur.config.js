@@ -12,6 +12,11 @@
       template: '',
       controller: 'mainController',
       controllerAs: 'main'
+    })
+    .when('/van', {
+      templateUrl: 'views/default.html',
+      controller: 'vanController',
+      controllerAs: 'van'
     });
   });
 })();
