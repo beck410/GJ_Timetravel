@@ -1,0 +1,22 @@
+{
+  "name": "GJ_Timetravel",
+  "version": "0.0.1",
+  "homepage": "https://github.com/beck410/GJ_Timetravel",
+  "authors": [
+    "beck410 <beck410@hotmail.com>"
+  ],
+  "main": "app/index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "lodash": "~3.0.0"
+  }
+}
