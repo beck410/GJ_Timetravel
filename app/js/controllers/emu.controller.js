@@ -315,9 +315,13 @@ vm.option2end = false;
   })
   $(".thirtyseven").on("click", function (){
     $(this).hide();
-    $(".textbox").text("*And so you do! Full of sardines and spam, you make your way back to the magic time bus.*");
+    $(".textbox").text("*And so you do! Full of sardines and spam, you make your way back to the magic time bus. Where will you go next?*");
     game.changeBackground(".bodyemu", "../images/EmuParty.png");
     $(".thirtyeight").show();
+    $scope.$apply();
+  })
+  $(".thirtyeight").on("click", function (){
+    $location.path("/" + game.randomizer());
     $scope.$apply();
   })
 
@@ -335,7 +339,6 @@ vm.option2end = false;
     game.changeBackground(".bodyemu", "../images/RooTrample.png");
     $scope.$apply();
   })
-
 
 
 
