@@ -9,7 +9,7 @@
       controllerAs: 'dino'
     })
     .when('/', {
-      template: '',
+      templateUrl: 'views/_home.html',
       controller: 'mainController',
       controllerAs: 'main'
     })

@@ -4,15 +4,20 @@ var vm = this;
 vm.option1 = false;
 vm.option2 = false;
 
+  //INTRO//
   $(".textbox").text("Seems like someone has messed up this time period. Someone helps Van Gogh makeup with his friend Gaugin. Because of this Modern Art is ruined!");
 
   $(".one").show();
-  $(".one").on("click", function (){
+  $(".one").on("click", function() {
     $(".one").hide();
     $(".textbox").text("You arrive in town and know that you must get Van’s ear. You know that at this time his friend Gaugin is in town, you also know Van Gogh frequents a particular bordello.  Do you want to see out Gaugin in case Van Gogh is with him, or visit the bordello?");
     vm.option1 = true;
     $scope.$apply();
   })
+
+// FIRST CHOICE//
+
+//Van GOGH//
   $(".left-1").on("click", function (){
     $(".textbox").text("You: Van Gogh, I’m a huge fan of your work. You mind if I get your autograph?");
     $(".two").show();
@@ -30,6 +35,8 @@ vm.option2 = false;
     $('.textbox').text( "Van Gogh: I was supposed to meet him at the bar, care to accompany me?")
     joinMoment();
   })
+
+  //GAUGIN//
 
   $(".right-1").on("click", function(){
     $('.textbox').text( "You: Gaugin? I’m actually a huge fan of your artwork. You mind if I get your autograph?");
@@ -59,6 +66,8 @@ vm.option2 = false;
     joinMoment();
   })
 
+  //BAR SCENE//
+
   function joinMoment(){
     $('.eight').show();
   }
@@ -81,11 +90,14 @@ vm.option2 = false;
     $('.eleven').show();
   })
 
+//SECOND CHOICE//
   $('.eleven').on('click', function(){
     $(this).hide();
     $('.textbox').text('*awkward tension intensifies*');
     vm.option2 = true;
     $scope.$apply();
   })
+
+
 
 });
