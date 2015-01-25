@@ -67,6 +67,10 @@ var game = (function() {
     clearInterval(func);
   }
 
+  function changeBackground(element, imageURL){
+    $(element).css("background-image", "url(" + imageURL + ")");
+  }
+
   var music = new Audio("audio/Game Jam-Tip-Toe.mp3");
   music.loop = true;
   music.play();
@@ -75,6 +79,7 @@ var game = (function() {
   return {
     randomizer: randomizer,
     arrowInterval: arrowInterval,
-    clearArrowInterval: clearArrowInterval
+    clearArrowInterval: clearArrowInterval,
+    changeBackground: changeBackground
   };
 }());
