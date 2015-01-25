@@ -69,6 +69,8 @@ var game = (function() {
 
   function changeBackground(element, imageURL){
     $(element).css("background-image", "url(" + imageURL + ")");
+    $(element).css("background-size", "contain");
+    $(element).css("background-repeat", "no-repeat");
   }
 
   var music = new Audio("audio/Game Jam-Tip-Toe.mp3");
