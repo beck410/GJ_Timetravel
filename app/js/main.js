@@ -45,11 +45,11 @@
 
 var game = (function() {
   "use strict";
-  var levels = ["emu", "van", "dinosaur"];
+  var levels = ["emu", "van", "dino"];
 
   function randomizer() {
     if( levels.length === 0 ){
-      alert('You Win!!!!!!111!!!!one!!1')
+      return "end";
     }
     var selection = levels.splice(Math.floor(Math.random() * levels.length), 1);
     return selection
@@ -66,6 +66,11 @@ var game = (function() {
   function clearArrowInterval(func) {
     clearInterval(func);
   }
+
+  var music = new Audio("audio/Game Jam-Tip-Toe.mp3");
+  music.loop = true;
+  music.play();
+
 
   return {
     randomizer: randomizer,

@@ -17,6 +17,11 @@
       templateUrl: 'views/van.html',
       controller: 'vanController',
       controllerAs: 'van'
+    })
+    .when('/end', {
+      templateUrl: 'views/_end.html',
+      controller: 'endController',
+      controllerAs: 'end'
     });
   });
 })();
