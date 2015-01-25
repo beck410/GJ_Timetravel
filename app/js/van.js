@@ -64,13 +64,13 @@ vm.option3 = false;
     $(this).hide();
     $('.textbox').text('Gaugin: He is too self absorbed with his work and women to pay attention to his friends, we almost came to blows over it the other night, but a strangely garbed person (much like yourself) helped us overcome our differences.');
     $('.seven').show();
-  })
+  });
 
   $('.seven').on('click', function(){
     $(this).hide();
     $('.textbox').text( 'I was supposed to meet him at the bar(?), care to accompany me?');
     joinMoment();
-  })
+  });
 
   //BAR SCENE//
 
@@ -79,10 +79,11 @@ vm.option3 = false;
   }
 
   $('.eight').on('click',function(){
-    vanAnimate.Eight(function(){
     $(this).hide();
+    vanAnimate.Eight(function(){
       $('.textbox').text('Van Gogh: Gaugin...');
       $('.nine').show();
+      $scope.$apply();
     });
   });
 
@@ -202,9 +203,11 @@ vm.option3 = false;
 
   $('.thirtytwo').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
-    $('.thirtythree').show();
-  })
+    vanAnimate.thirtyTwo(function(){
+      $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
+      $('.thirtythree').show();
+    });
+  });
 
   $('.thirtythree').on('click', function(){
     $(this).hide();
