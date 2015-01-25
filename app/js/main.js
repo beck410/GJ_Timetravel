@@ -5,13 +5,13 @@
   .controller("mainController", function($location, $scope) {
 
     $('.textbox').text("You, Marta McFry, wake up and walk to work. You haven’t had your coffee, so the surreality of the landscape doesn’t really sink in. On your desk is a note in messy handwriting.");
-
+    //insert Marta in bed background image
     $('.one').show();
 
     $('.one').on('click', function(){
       $(this).hide();
       $('.textbox').text('“Dear Marta, The current timeline has been distorted and it is up to you to fix things. A meddling interloper has tried his hand at making history a better place, but botched it big time... ');
-
+      //insert Desk background image
       $('.two').show();
     });
 
@@ -24,9 +24,10 @@
 
       $('.three').on('click', function(){
         $(this).hide();
-
+        //Insert kitchen background
         $('.textbox').text('*sigh* You brew yourself a pot of coffee, and walk outside to find the time machine waiting for you.')
-
+        //*Bonus Mode* Move Marta to the door or side of the screen
+        //transition to outside image
         $('.four').show();
       })
 
