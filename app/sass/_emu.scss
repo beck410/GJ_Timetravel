@@ -1,0 +1,15 @@
+#marta {
+  height: 50px;
+  width: 50px;
+  background-color: orange;
+}
+
+.arrow {
+  font-size: 3em;
+  color: white;
+  display: none;
+  cursor: pointer;
+  a:hover {
+    color: yellow;
+  }
+}
