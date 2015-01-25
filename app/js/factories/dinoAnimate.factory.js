@@ -37,7 +37,7 @@
     function _dinasaurDeath(){ 
       marta.add(lever).add(door).add(leverBase).fadeOut('slow');
       bgImg.fadeOut('slow',function(){
-        marta.css('height','200px').css('left','-700px').addClass('flipped');
+        marta.css('height','200px').addClass('flipped');
         bgImg.css('background','url("../images/DynoBackground.png")').add(marta).fadeIn('slow',function(){
           dino.show('fast', function(){
             console.log("called")
