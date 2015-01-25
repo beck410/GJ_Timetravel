@@ -18,7 +18,7 @@
   height: 320px;
   background: url('../images/MartaLeft.png');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   z-index:1;
 }
 
@@ -35,7 +35,7 @@
   width: 20px;
   height: 135px;
   background: url('../images/lever.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   transition: transform 0.5s;
   -webkit-transition: -webkit-transform 0.5s;
@@ -52,7 +52,7 @@
   width: 69px;
   height: 20px;
   background: url('../images/LeverBase.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -63,7 +63,7 @@
   height: 380px;
   display:none;
   background: url('../images/Dino.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
