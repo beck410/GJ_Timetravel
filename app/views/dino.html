@@ -1,6 +1,6 @@
 <div class="body cf">
   <div class="body-dino">
-    <div ></div> 
+    <div ></div>
     <div class="dino-images" id="marta-img"></div>
     <div class="dino-images" id="lever-img"></div>
     <div class="dino-images" id="lever-base-img"></div>
@@ -8,10 +8,9 @@
   </div>
 </div>
 <div class="buttonwrap">
-  <button ng-click="dino.leverChoice()" class="btn">Lever</button>
-  <button class="btn">click</button>
-  <button ng-click="dino.doorChoice()" class="btn">Door</button>
+  <button ng-click="dino.leverChoice()" class="btn" ng-show="dino.option">Lever</button>
+  <button class="btn" ng-hide="true">click</button>
+  <button ng-click="dino.doorChoice()" class="btn" ng-show="dino.option">Door</button>
 
 </div>
 <div class="textbox"></div>
-
