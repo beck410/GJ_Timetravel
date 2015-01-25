@@ -4,6 +4,8 @@ var vm = this;
 vm.option1 = false;
 vm.option2 = false;
 vm.option3 = false;
+vm.gogh = false;
+vm.nameToUse = ["Gaugin", "Van Gogh"];
 
   //INTRO//
   $(".textbox").text("Seems like someone has messed up this time period. Someone helps Van Gogh makeup with his friend Gaugin. Because of this Modern Art is ruined!");
@@ -20,9 +22,10 @@ vm.option3 = false;
 
 //Van GOGH//
   $(".left-1").on("click", function (){
-    $(".textbox").text("You: Van Gogh, I’m a huge fan of your work. You mind if I get your autograph?");
+    $(".textbox").text("Marta: Van Gogh, I’m a huge fan of your work. You mind if I get your autograph?");
     $(".two").show();
     vm.option1 = false;
+    vm.gogh = true;
     $scope.$apply();
   })
   $(".two").on("click", function (){
@@ -40,7 +43,7 @@ vm.option3 = false;
   //GAUGIN//
 
   $(".right-1").on("click", function(){
-    $('.textbox').text( "You: Gaugin? I’m actually a huge fan of your artwork. You mind if I get your autograph?");
+    $('.textbox').text( "Marta: Gaugin? I’m actually a huge fan of your artwork. You mind if I get your autograph?");
     vm.option1 = false;
     $('.four').show();
     $scope.$apply();
@@ -52,7 +55,7 @@ vm.option3 = false;
   })
   $('.five').on("click", function(){
     $(this).hide();
-    $('.textbox').text('You: Pompous fool, what do you mean?');
+    $('.textbox').text('Marta: Pompous fool, what do you mean?');
     $('.six').show();
   });
   $('.six').on('click', function() {
@@ -63,7 +66,7 @@ vm.option3 = false;
 
   $('.seven').on('click', function(){
     $(this).hide();
-    $('.textbox').text( 'I was supposed to meet him at the bar(?), care to accompany me?')
+    $('.textbox').text( 'Gaugin: I was supposed to meet him at the bar, care to accompany me?')
     joinMoment();
   })
 
@@ -109,7 +112,7 @@ vm.option3 = false;
 
   $('.thirteen').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Game Over.');
+    $('.textbox').text('Game Over. Looping you back to the previous decision.');
     $('.eleven').show();
   })
 
@@ -117,29 +120,31 @@ vm.option3 = false;
   //Tell him his art sucks!//
 
   $('.left-2').on('click', function(){
-    $('.textbox').text('Van Gogh: What I said no such thing, however true it might be!');
+    if(vm.gogh == true){
+      vm.nameToUse = ["Van Gogh", "Gaugin"];
+      $scope.$apply();
+    }
+    $('.textbox').text(vm.nameToUse[0] + ': What I said no such thing, however true it might be!');
     $('.fourteen').show();
     vm.option2 = false;
     $scope.$apply();
   })
 
-
-
   $('.fourteen').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Gaugin: I may have thought it, but am too refined to say so.');
+    $('.textbox').text(vm.nameToUse[0] + ': I may have thought it, but am too refined to say so.');
     $('.fifteen').show();
   })
 
   $('.fifteen').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Van Gogh: How dare you, first you stole my woman then you besmirch my work!');
+    $('.textbox').text(vm.nameToUse[1] + ': How dare you, first you stole my woman then you besmirch my work!');
     $('.sixteen').show();
   })
 
   $('.sixteen').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Gaugin: This was a mistake, we never should have listened to that Interloper!');
+    $('.textbox').text(vm.nameToUse[0] + ': This was a mistake, we never should have listened to that Interloper!');
     $('.seventeen').show();
   })
 
@@ -157,7 +162,7 @@ vm.option3 = false;
 
   $('.nineteen').on('click', function(){
     $(this).hide();
-    $('.textbox').text('You: A duel, isn’t Gaugin a fencer as well as painter? Are you sure this is a good idea?');
+    $('.textbox').text('Marta: A duel, isn’t Gaugin a fencer as well as painter? Are you sure this is a good idea?');
     $('.twenty').show();
   })
 
@@ -171,7 +176,7 @@ vm.option3 = false;
 
   $('.twentyone').on('click', function(){
     $(this).hide();
-    $('.textbox').text('You: Well, at least prepare before meeting him...');
+    $('.textbox').text('Marta: Well, at least prepare before meeting him...');
     vm.option3 = true;
     $scope.$apply();
   })
@@ -180,14 +185,14 @@ vm.option3 = false;
   //Apology//
 
   $('.middle-3').on('click', function(){
-    $('.textbox').text('You: All you need is a well crafted apology and I’m sure you two can be friends again.');
+    $('.textbox').text('Marta: All you need is a well crafted apology and I’m sure you two can be friends again.');
     $('.thirtytwo').show();
     vm.option3 = false;
     $scope.$apply();
   })
 
   $('.right-3').on('click', function(){
-    $('.textbox').text('You: He is a better fencer than you, take this pistol with you to ensure victory.');
+    $('.textbox').text('Marta: He is a better fencer than you, take this pistol with you to ensure victory.');
     $('.twentyeight').show();
     vm.option3 = false;
     $scope.$apply();
@@ -207,7 +212,7 @@ vm.option3 = false;
 
   $('.thirtyfour').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Gaugin: I forgive you, lets head to the bar (bordello?) and I’ll buy a round for everyone!');
+    $('.textbox').text('Gaugin: I forgive you, lets head to the bar and I’ll buy a round for everyone!');
     $('.thirtyfive').show();
   })
 
@@ -219,7 +224,7 @@ vm.option3 = false;
 
   $('.thirtysix').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Game Over.');
+    $('.textbox').text('Game Over. Looping you back to the previous decision.');
     $('.twentyone').show();
   })
 
@@ -245,7 +250,7 @@ vm.option3 = false;
 
   $('.thirtyone').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Game Over.');
+    $('.textbox').text('Game Over. Looping you back to the previous decision.');
     $('.twentyone').show();
   })
 
@@ -253,7 +258,7 @@ vm.option3 = false;
   //Razor//
 
   $('.left-3').on('click', function(){
-    $('.textbox').text('You: Take that razor with you, he’ll never see it coming');
+    $('.textbox').text('Marta: Take that razor with you, he’ll never see it coming');
     $('.twentytwo').show();
     vm.option3 = false;
     $scope.$apply();
