@@ -5,4 +5,55 @@
     display: none;
     cursor: pointer;
   }
+  
+  .body{
+    background: url('../images/MartaonMac.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  #van-marta {
+    background: url('../images/MartaLeft.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 150px;
+    width: 100%;
+    bottom: 10px;
+    left: 500px;
+  }
+
+  #van {
+    background: url('../images/VanGogh.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 100%;
+    bottom: 10px;
+    left: -500px;
+  }
+
+  #gauguin{
+    background: url('../images/Gauguin.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 100%;
+    bottom: 10px;
+    left: 300px;
+  }
+
+  .van-img{
+    position: absolute;
+  }
+
+  .flipped {
+    left: 0;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
 }

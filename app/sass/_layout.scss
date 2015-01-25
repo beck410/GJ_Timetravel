@@ -24,7 +24,8 @@
 .body{
   height: 400px;
   width: 100%;
-  background-color: blue;
+  background: black;
+  border: 10px solid #222;
 }
 
 .textbox{
@@ -41,4 +42,10 @@
   height: 50px;
   width: 100%;
   background-color: purple;
+}
+
+h1 {
+  font-family: "Munro";
+  font-size: 5em;
+  text-align:center;
 }
