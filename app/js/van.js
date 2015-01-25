@@ -1,5 +1,6 @@
+(function(){
 angular.module("TTT")
-.controller("vanController", function($location, $scope) {
+.controller("vanController", function($location, $scope,vanAnimate) {
 var vm = this;
 vm.option1 = false;
 vm.option2 = false;
@@ -8,7 +9,7 @@ vm.gogh = false;
 vm.nameToUse = ["Gaugin", "Van Gogh"];
 
   //INTRO//
-  $(".textbox").text("Seems like someone has messed up this time period. Someone helps Van Gogh makeup with his friend Gaugin. Because of this Modern Art is ruined!");
+  $(".textbox").text("Seems like someone has messed up this time period.Van Gogh has made up with his friend Gaugin and never lost his ear. Because of this realism is all the art we know!");
 
   $(".one").show();
   $(".one").on("click", function() {
@@ -16,43 +17,56 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
     $(".textbox").text("You arrive in town and know that you must get Van’s ear. You know that at this time his friend Gaugin is in town, you also know Van Gogh frequents a particular bordello.  Do you want to see out Gaugin in case Van Gogh is with him, or visit the bordello?");
     vm.option1 = true;
     $scope.$apply();
-  })
+  });
 
 // FIRST CHOICE//
 
 //Van GOGH//
   $(".left-1").on("click", function (){
-    $(".textbox").text("Marta: Van Gogh, I’m a huge fan of your work. You mind if I get your autograph?");
-    $(".two").show();
-    vm.option1 = false;
-    vm.gogh = true;
-    $scope.$apply();
-  })
-  $(".two").on("click", function (){
-    $(".textbox").text("Van Gogh: Always a pleasure to meet an admirer. That Gaugin wouldn’t know quality if it hit him in the face. We got in an argument the other night, but a strangely garbed person (much like yourself) worked out a truce between us and now we are reconciled.");
-    $(".two").hide();
-    $(".three").show();
-  })
+
+    vanAnimate.leftOne(function(){
+      $(".textbox").text("You: Van Gogh, I’m a huge fan of your work. You mind if I get your autograph?");
+      $(".two").show();
+      vm.option1 = false;
+      $scope.$apply();
+
+      $(".two").on("click", function (){
+        $(".textbox").text("Van Gogh: Always a pleasure to meet an admirer. That Gaugin wouldn’t know quality if it hit him in the face. We got in an argument the other night, but a strangely garbed person (much like yourself) worked out a truce between us and now we are reconciled.");
+        $(".two").hide();
+        $(".three").show();
+      });
+    });
+  });
 
   $(".three").on("click", function(){
     $('.three').hide();
-    $('.textbox').text( "Van Gogh: I was supposed to meet him at the bar, care to accompany me?")
+    $('.textbox').text( "Van Gogh: I was supposed to meet him at the bar, care to accompany me?");
     joinMoment();
-  })
+  });
 
   //GAUGIN//
 
   $(".right-1").on("click", function(){
+
+    vanAnimate.rightOne(function(){
+      $('.textbox').text( "You: Gaugin? I’m actually a huge fan of your artwork. You mind if I get your autograph?");
+      vm.option1 = false;
+      $('.four').show();
+      $scope.$apply();
+  })
+
+
     $('.textbox').text( "Marta: Gaugin? I’m actually a huge fan of your artwork. You mind if I get your autograph?");
     vm.option1 = false;
     $('.four').show();
     $scope.$apply();
   })
+
   $('.four').on("click", function(){
     $('.textbox').text('Gaugin: I don’t do autographs. That’s more of that pompous fool Van Gogh purview.');
     $(this).hide();
     $('.five').show();
-  })
+  });
   $('.five').on("click", function(){
     $(this).hide();
     $('.textbox').text('Marta: Pompous fool, what do you mean?');
@@ -62,13 +76,15 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
     $(this).hide();
     $('.textbox').text('Gaugin: He is too self absorbed with his work and women to pay attention to his friends, we almost came to blows over it the other night, but a strangely garbed person (much like yourself) helped us overcome our differences.');
     $('.seven').show();
-  })
+  });
 
   $('.seven').on('click', function(){
     $(this).hide();
+
     $('.textbox').text( 'Gaugin: I was supposed to meet him at the bar, care to accompany me?')
+
     joinMoment();
-  })
+  });
 
   //BAR SCENE//
 
@@ -78,9 +94,12 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
 
   $('.eight').on('click',function(){
     $(this).hide();
-    $('.textbox').text('Van Gogh: Gaugin...');
-    $('.nine').show();
-  })
+    vanAnimate.Eight(function(){
+      $('.textbox').text('Van Gogh: Gaugin...');
+      $('.nine').show();
+      $scope.$apply();
+    });
+  });
 
   $('.nine').on('click', function(){
     $(this).hide();
@@ -104,10 +123,12 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
   })
 
   $('.right-2').on('click', function(){
-    $('.textbox').text('A few drinks loosened everyone up and helped smooth out any remaining tensions between the friends. After a few too many drinks all three of you decided to visit the bordello, unfortunately the drinks made it hard to notice the oncoming traffic. Van Gogh and Gaugin were fine, but you were trampled by a horsecart.');
-    $('.thirteen').show();
-    vm.option2 = false;
-    $scope.$apply();
+    vanAnimate.thirty(function(){
+      $('.textbox').text('A few drinks loosened everyone up and helped smooth out any remaining tensions between the friends. After a few too many drinks all three of you decided to visit the bordello, unfortunately the drinks made it hard to notice the oncoming traffic. Van Gogh and Gaugin were fine, but you were trampled by a horsecart.');
+      $('.thirteen').show();
+      vm.option2 = false;
+      $scope.$apply();
+    })
   })
 
   $('.thirteen').on('click', function(){
@@ -154,10 +175,12 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
     $('.eighteen').show();
   })
 
-  $('.eighteen').on('click', function(){
+  $('.eighteen').on('click', function(){ 
     $(this).hide();
-    $('.textbox').text('You go back to Van Gogh\'s Pad');
-    $('.nineteen').show();
+    vanAnimate.eighteen(function(){
+      $('.textbox').text('You go back to Van Gogh\'s Pad');
+      $('.nineteen').show();
+    })
   })
 
   $('.nineteen').on('click', function(){
@@ -192,6 +215,14 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
   })
 
   $('.right-3').on('click', function(){
+
+    vanAnimate.right3(function(){
+      $('.textbox').text('You: He is a better fencer than you, take this pistol with you to ensure victory.');
+      $('.twentyeight').show();
+      vm.option3 = false;
+      $scope.$apply();
+    })
+
     $('.textbox').text('Marta: He is a better fencer than you, take this pistol with you to ensure victory.');
     $('.twentyeight').show();
     vm.option3 = false;
@@ -200,9 +231,11 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
 
   $('.thirtytwo').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
-    $('.thirtythree').show();
-  })
+    vanAnimate.thirtyTwo(function(){
+      $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
+      $('.thirtythree').show();
+    });
+  });
 
   $('.thirtythree').on('click', function(){
     $(this).hide();
@@ -218,8 +251,10 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
 
   $('.thirtyfive').on('click', function(){
     $(this).hide();
-    $('.textbox').text('*The crowd that had gathered around cheers in excitement and rushes to the bar (bordello?), unfortunately you get trampled by the crowd in the confusion.*')
-    $('.thirtysix').show();
+      vanAnimate.thirtyfive(function(){
+      $('.textbox').text('*The crowd that had gathered around cheers in excitement and rushes to the bar (bordello?), unfortunately you get trampled by the crowd in the confusion.*')
+      $('.thirtysix').show();
+    })
   })
 
   $('.thirtysix').on('click', function(){
@@ -244,9 +279,11 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
 
   $('.thirty').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Van Gogh pulls out pistol and attempts to shoot Gaugin. Van Gogh is a terrible shot, misses Gaugin and spooks some horses, which trample you to death.');
-    $('.thirtyone').show();
-  })
+    vanAnimate.thirty(function(){
+      $('.textbox').text('Van Gogh pulls out pistol and attempts to shoot Gaugin. Van Gogh is a terrible shot, misses Gaugin and spooks some horses, which trample you to death.');
+      $('.thirtyone').show();
+    });
+  });
 
   $('.thirtyone').on('click', function(){
     $(this).hide();
@@ -258,6 +295,12 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
   //Razor//
 
   $('.left-3').on('click', function(){
+    vanAnimate.left3(function(){
+      $('.textbox').text('You: Take that razor with you, he’ll never see it coming');
+      $('.twentytwo').show();
+      vm.option3 = false;
+      $scope.$apply();
+    })
     $('.textbox').text('Marta: Take that razor with you, he’ll never see it coming');
     $('.twentytwo').show();
     vm.option3 = false;
@@ -266,8 +309,10 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
 
   $('.twentytwo').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
-    $('.twentythree').show();
+    vanAnimate.twentytwo(function(){
+      $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
+      $('.twentythree').show();
+    })
   })
 
   $('.twentythree').on('click', function(){
@@ -284,8 +329,10 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
 
   $('.twentyfive').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Van Gogh: Ouch...');
-    $('.twentysix').show();
+    vanAnimate.twentyfive(function(){
+      $('.textbox').text('Van Gogh: Ouch...');
+      $('.twentysix').show();
+    })
   })
 
   $('.twentysix').on('click', function(){
@@ -305,5 +352,5 @@ vm.nameToUse = ["Gaugin", "Van Gogh"];
     $location.path("/" + game.randomizer());
     $scope.$apply();
   })
-
-});
+})
+})();
