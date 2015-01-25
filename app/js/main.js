@@ -70,7 +70,7 @@ var game = (function() {
 
   function changeBackground(element, imageURL){
     $(element).css("background-image", "url(" + imageURL + ")");
-    $(element).css("background-size", "contain");
+    $(element).css("background-size", "cover");
     $(element).css("background-repeat", "no-repeat");
   }
 
