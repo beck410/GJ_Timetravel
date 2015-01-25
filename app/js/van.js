@@ -109,10 +109,12 @@ vm.option3 = false;
   })
 
   $('.right-2').on('click', function(){
-    $('.textbox').text('A few drinks loosened everyone up and helped smooth out any remaining tensions between the friends. After a few too many drinks all three of you decided to visit the bordello, unfortunately the drinks made it hard to notice the oncoming traffic. Van Gogh and Gaugin were fine, but you were trampled by a horsecart.');
-    $('.thirteen').show();
-    vm.option2 = false;
-    $scope.$apply();
+    vanAnimate.thirty(function(){
+      $('.textbox').text('A few drinks loosened everyone up and helped smooth out any remaining tensions between the friends. After a few too many drinks all three of you decided to visit the bordello, unfortunately the drinks made it hard to notice the oncoming traffic. Van Gogh and Gaugin were fine, but you were trampled by a horsecart.');
+      $('.thirteen').show();
+      vm.option2 = false;
+      $scope.$apply();
+    })
   })
 
   $('.thirteen').on('click', function(){
@@ -157,10 +159,12 @@ vm.option3 = false;
     $('.eighteen').show();
   })
 
-  $('.eighteen').on('click', function(){
+  $('.eighteen').on('click', function(){ 
     $(this).hide();
-    $('.textbox').text('You go back to Van Gogh\'s Pad');
-    $('.nineteen').show();
+    vanAnimate.eighteen(function(){
+      $('.textbox').text('You go back to Van Gogh\'s Pad');
+      $('.nineteen').show();
+    })
   })
 
   $('.nineteen').on('click', function(){
@@ -195,10 +199,12 @@ vm.option3 = false;
   })
 
   $('.right-3').on('click', function(){
-    $('.textbox').text('You: He is a better fencer than you, take this pistol with you to ensure victory.');
-    $('.twentyeight').show();
-    vm.option3 = false;
-    $scope.$apply();
+    vanAnimate.right3(function(){
+      $('.textbox').text('You: He is a better fencer than you, take this pistol with you to ensure victory.');
+      $('.twentyeight').show();
+      vm.option3 = false;
+      $scope.$apply();
+    })
   })
 
   $('.thirtytwo').on('click', function(){
@@ -223,8 +229,10 @@ vm.option3 = false;
 
   $('.thirtyfive').on('click', function(){
     $(this).hide();
-    $('.textbox').text('*The crowd that had gathered around cheers in excitement and rushes to the bar (bordello?), unfortunately you get trampled by the crowd in the confusion.*')
-    $('.thirtysix').show();
+      vanAnimate.thirtyfive(function(){
+      $('.textbox').text('*The crowd that had gathered around cheers in excitement and rushes to the bar (bordello?), unfortunately you get trampled by the crowd in the confusion.*')
+      $('.thirtysix').show();
+    })
   })
 
   $('.thirtysix').on('click', function(){
@@ -249,9 +257,11 @@ vm.option3 = false;
 
   $('.thirty').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Van Gogh pulls out pistol and attempts to shoot Gaugin. Van Gogh is a terrible shot, misses Gaugin and spooks some horses, which trample you to death.');
-    $('.thirtyone').show();
-  })
+    vanAnimate.thirty(function(){
+      $('.textbox').text('Van Gogh pulls out pistol and attempts to shoot Gaugin. Van Gogh is a terrible shot, misses Gaugin and spooks some horses, which trample you to death.');
+      $('.thirtyone').show();
+    });
+  });
 
   $('.thirtyone').on('click', function(){
     $(this).hide();
@@ -263,16 +273,20 @@ vm.option3 = false;
   //Razor//
 
   $('.left-3').on('click', function(){
-    $('.textbox').text('You: Take that razor with you, he’ll never see it coming');
-    $('.twentytwo').show();
-    vm.option3 = false;
-    $scope.$apply();
+    vanAnimate.left3(function(){
+      $('.textbox').text('You: Take that razor with you, he’ll never see it coming');
+      $('.twentytwo').show();
+      vm.option3 = false;
+      $scope.$apply();
+    })
   })
 
   $('.twentytwo').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
-    $('.twentythree').show();
+    vanAnimate.twentytwo(function(){
+      $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
+      $('.twentythree').show();
+    })
   })
 
   $('.twentythree').on('click', function(){
@@ -289,8 +303,10 @@ vm.option3 = false;
 
   $('.twentyfive').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Van Gogh: Ouch...');
-    $('.twentysix').show();
+    vanAnimate.twentyfive(function(){
+      $('.textbox').text('Van Gogh: Ouch...');
+      $('.twentysix').show();
+    })
   })
 
   $('.twentysix').on('click', function(){
