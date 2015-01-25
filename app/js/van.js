@@ -3,6 +3,7 @@ angular.module("TTT")
 var vm = this;
 vm.option1 = false;
 vm.option2 = false;
+vm.option3 = false;
 
   $(".textbox").text("Seems like someone has messed up this time period. Someone helps Van Gogh makeup with his friend Gaugin. Because of this Modern Art is ruined!");
 
@@ -87,5 +88,193 @@ vm.option2 = false;
     vm.option2 = true;
     $scope.$apply();
   })
+
+  $('.right-2').on('click', function(){
+    $('.textbox').text('A few drinks loosened everyone up and helped smooth out any remaining tensions between the friends. After a few too many drinks all three of you decided to visit the bordello, unfortunately the drinks made it hard to notice the oncoming traffic. Van Gogh and Gaugin were fine, but you were trampled by a horsecart.');
+    $('.thirteen').show();
+    vm.option2 = false;
+    $scope.$apply();
+  })
+
+  $('.left-2').on('click', function(){
+    $('.textbox').text('Van Gogh: What I said no such thing, however true it might be!');
+    $('.fourteen').show();
+    vm.option2 = false;
+    $scope.$apply();
+  })
+
+  $('.thirteen').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Game Over.');
+    $('.eleven').show();
+  })
+
+  $('.fourteen').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Gaugin: I may have thought it, but am too refined to say so.');
+    $('.fifteen').show();
+  })
+
+  $('.fifteen').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh: How dare you, first you stole my woman then you besmirch my work!');
+    $('.sixteen').show();
+  })
+
+  $('.sixteen').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Gaugin: This was a mistake, we never should have listened to that Interloper!');
+    $('.seventeen').show();
+  })
+
+  $('.seventeen').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Both: We duel at dawn!');
+    $('.eighteen').show();
+  })
+
+  $('.eighteen').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('You go back to Van Gogh\'s Pad');
+    $('.nineteen').show();
+  })
+
+  $('.nineteen').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('You: A duel, isn’t Gaugin a fencer as well as painter? Are you sure this is a good idea?');
+    $('.twenty').show();
+  })
+
+  $('.twenty').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh: You heard the man, he is unforgivable');
+    $('.twentyone').show();
+  })
+
+  $('.twentyone').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('You: Well, at least prepare before meeting him...');
+    vm.option3 = true;
+    $scope.$apply();
+  })
+
+  $('.right-3').on('click', function(){
+    $('.textbox').text('You: He is a better fencer than you, take this pistol with you to ensure victory.');
+    $('.twentyeight').show();
+    vm.option3 = false;
+    $scope.$apply();
+  })
+
+  $('.middle-3').on('click', function(){
+    $('.textbox').text('You: All you need is a well crafted apology and I’m sure you two can be friends again.');
+    $('.thirtytwo').show();
+    vm.option3 = false;
+    $scope.$apply();
+  })
+
+  $('.left-3').on('click', function(){
+    $('.textbox').text('You: Take that razor with you, he’ll never see it coming');
+    $('.twentytwo').show();
+    vm.option3 = false;
+    $scope.$apply();
+  })
+
+  $('.twentytwo').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
+    $('.twentythree').show();
+  })
+
+  $('.twentythree').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh: Yes, we will settle our differences in a tried and true fashion. With violence!');
+    $('.twentyfour').show();
+  })
+
+  $('.twentyfour').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('*exciting sword fight in which Gaugin cuts off Gogh’s ear*');
+    $('.twentyfive').show();
+  })
+
+  $('.twentyfive').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh: Ouch...');
+    $('.twentysix').show();
+  })
+
+  $('.twentysix').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Gaugin: Yeah, you should get that looked at.');
+    $('.twentyseven').show();
+  })
+
+  $('.twentyseven').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh: Naw I think I’ll send it to a girl I know, she’ll love it.');
+    //This story arc is completed!!!
+    $('.thirtyseven').show();
+  })
+
+  $('.twentyeight').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
+    $('.twentynine').show();
+  })
+
+  $('.twentynine').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh: Yes, we will settle our differences in a tried and true fashion. With violence!');
+    $('.thirty').show();
+  })
+
+  $('.thirty').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh pulls out pistol and attempts to shoot Gaugin. Van Gogh is a terrible shot, misses Gaugin and spooks some horses, which trample you to death.');
+    $('.thirtyone').show();
+  })
+
+  $('.thirtyone').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Game Over.');
+    $('.twentyone').show();
+  })
+
+  $('.thirtytwo').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
+    $('.thirtythree').show();
+  })
+
+  $('.thirtythree').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh: There’s no need for such harsh language, I forgive you for your trespasses and invite you to do the same.');
+    $('.thirtyfour').show();
+  })
+
+  $('.thirtyfour').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Gaugin: I forgive you, lets head to the bar (bordello?) and I’ll buy a round for everyone!');
+    $('.thirtyfive').show();
+  })
+
+  $('.thirtyfive').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('*The crowd that had gathered around cheers in excitement and rushes to the bar (bordello?), unfortunately you get trampled by the crowd in the confusion.*')
+    $('.thirtysix').show();
+  })
+
+  $('.thirtysix').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Game Over.');
+    $('.twentyone').show();
+  })
+
+  $('.thirtyseven').on('click', function(){
+    $location.path("/" + game.randomizer());
+    $scope.$apply();
+  })
+
+
 
 });

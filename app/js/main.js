@@ -30,6 +30,11 @@ var game = (function() {
     clearInterval(func);
   }
 
+  var music = new Audio("audio/Game Jam-Tip-Toe.mp3");
+  music.loop = true;
+  music.play();
+
+
   return {
     randomizer: randomizer,
     arrowInterval: arrowInterval,
