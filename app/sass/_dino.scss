@@ -14,7 +14,7 @@
 #marta-img {
   bottom: 0;
   left: 300px;
-  width: 100%;
+  width: 100px;
   height: 320px;
   background: url('../images/MartaLeft.png');
   background-repeat: no-repeat;
@@ -37,6 +37,13 @@
   background: url('../images/lever.png');
   background-size: contain;
   background-repeat: no-repeat;
+  transition: transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+}
+
+.lever-rotate{
+  transform: rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
 }
 
 #lever-base-img {

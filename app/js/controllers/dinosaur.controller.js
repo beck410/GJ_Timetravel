@@ -6,14 +6,14 @@
 
     vm.doorChoice = function(){ 
       dinoAnimate.die();
-    }
+    };
 
     vm.leverChoice = function(){
-      dinoAnimate.nextLevel(function(){
-      $location.path('/' + game.randomizer());
-      $scope.$apply();
-      });
-    }
+      dinoAnimate.nextLevel(function(lever){ 
+        $location.path('/' + game.randomizer());
+        $scope.$apply();
+      }); 
+    };
   });
 })();
 

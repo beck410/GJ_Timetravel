@@ -13,18 +13,21 @@
     var leverBase = $('#lever-base-img');
 
     function nextLevel(cb){
-      marta.addClass('flipped').css('left','-500px');
+      marta.addClass('flipped')
       for(var i=0;i<9;i++){
-        marta.animate({'left': '+=50px'},'slow');
+        marta.animate({'left': '+=50px'},'fast');
       }
-      marta.animate({'left': '+=10px'},'slow',function(){
-        cb();
+      setTimeout(function(){
+        lever.addClass('lever-rotate');
+      })
+      marta.animate({'left': '+=1px'},'slow',function(){
+        cb(lever);
       });
     }
 
     function die(){
       for(var i=0;i<4;i++){
-        marta.animate({'left': '-=50px'},'slow'); 
+        marta.animate({'left': '-=50px'},'fast'); 
       }
       marta.animate({'left': '-=20px'},'slow',function(){
         _dinasaurDeath();
