@@ -9,12 +9,12 @@
       controllerAs: 'dino'
     })
     .when('/', {
-      template: '',
+      templateUrl: 'views/_home.html',
       controller: 'mainController',
       controllerAs: 'main'
     })
     .when('/van', {
-      templateUrl: 'views/default.html',
+      templateUrl: 'views/van.html',
       controller: 'vanController',
       controllerAs: 'van'
     });
