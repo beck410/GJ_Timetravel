@@ -45,7 +45,7 @@
 
 var game = (function() {
   "use strict";
-  var levels = ["emu", "van", "dinosaur"];
+  var levels = ["emu", "van", "dino"];
 
   function randomizer() {
     if( levels.length === 0 ){
