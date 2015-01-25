@@ -49,7 +49,7 @@ var game = (function() {
 
   function randomizer() {
     if( levels.length === 0 ){
-      alert('You Win!!!!!!111!!!!one!!1')
+      return "end";
     }
     var selection = levels.splice(Math.floor(Math.random() * levels.length), 1);
     return selection
