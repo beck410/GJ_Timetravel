@@ -9,7 +9,12 @@
   color: white;
   display: none;
   cursor: pointer;
-  a:hover {
+  .arrow:hover {
     color: yellow;
   }
+}
+
+button {
+  margin: auto auto;
+  padding: 15px;
 }

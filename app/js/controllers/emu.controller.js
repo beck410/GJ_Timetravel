@@ -2,8 +2,10 @@ angular.module("TTT")
 .controller("emuController", function($location, $scope) {
   var vm = this;
 
-  $(".textbox").text("Emus have overrun Australia destroying all crops. You are sent to 1932 where Major Merideth has second thoughts about facing the fierce emu mob.");
 
+  $(".textbox").text("Emus have overrun Australia destroying all crops. You are sent to 1932 where Major Merideth has second thoughts about facing the fierce emu mob once more.");
+  $(".bodyemu").css("background-image", "url(https://upload.wikimedia.org/wikipedia/commons/d/dc/Emus,_Wilsons_Promontory_National_Park.jpg)")
+  $(".bodyemu").css("background-size", "600px 600px");
 
 // PUB SCENE //
 vm.option1pub = false;
@@ -12,11 +14,9 @@ vm.option2pub = false;
   $(".one").show();
   $(".one").on("click", function (){
     $(this).hide();
-    $(".textbox").text("*You find Meridith at a pub despairing over his plight.*");
+    $(".textbox").text("Meredith: I don't even deserve to be called a Major!");
     $(".two").show();
     game.changeBackground(".bodyemu", "../images/MeredithatPub.png");
-    $(".bodyemu").css("background-size", "contain");
-    $(".bodyemu").css("background-repeat", "no-repeat");
 
 
     $scope.$apply();
@@ -59,14 +59,16 @@ vm.option2pub = false;
     vm.option1pub = false;
     vm.option2pub = false;
     $(".six").show();
+    game.changeBackground(".bodyemu", "../images/SheepTrample.png");
     $scope.$apply();
   })
 
   $(".right-pub").on("click", function (){
-    $(".textbox").text("*You decide to let him stumble off into the night and sober up. You have a quick drink and ask the barkeep for Merideth’s address. You learn that he is staying at the nearby base and make plans to visit him in the morning to try and convince him to defend the farms from the emus. You have a plan...*");
+    $(".textbox").text("*You let him stumble off into the night, deciding to go to his base in the morning. You have a plan...*");
     vm.option1pub = false;
     vm.option2pub = false;
     $(".seven").show();
+    game.changeBackground(".bodyemu", "../images/Base.png");
     $scope.$apply();
   })
 
@@ -81,7 +83,7 @@ vm.option2base = false;
   })
   $(".eight").on("click", function (){
     $(this).hide();
-    $(".textbox").text("Marta: There aren’t enough experienced machine gunners in Australia, you are needed to lead the campaign against them and protect the farmlands from destruction!");
+    $(".textbox").text("Marta: There aren’t enough experienced machine gunners in Australia. You are needed to lead the campaign against the emus and protect the farmlands from destruction!");
     $(".nine").show();
     $scope.$apply();
   })
@@ -105,6 +107,7 @@ vm.option2base = false;
     vm.option1base = false;
     vm.option2base = false;
     $(".thirteen").show();
+    game.changeBackground(".bodyemu", "../images/MeredithFood.png");
     $scope.$apply();
   })
 
@@ -127,6 +130,7 @@ vm.option2base = false;
     $(this).hide();
     $(".textbox").text("*Unfortunately, Major Merideth’s phobia was exacerbated by your rousing speech. In his panic to escape he hopped in a vehicle and accidently backed over and trampled you. GAME OVER!! Click the arrow to try again.*");
     $(".ten").show();
+    game.changeBackground(".bodyemu", "../images/JeepTrample.png");
     $scope.$apply();
   })
 
@@ -188,6 +192,7 @@ vm.option2war = false;
     $(this).hide();
     $(".textbox").text("*After gathering his platoon, you and his men head out into the field.  After several days of travelling you find where the mob of emus are.*");
     $(".twentyone").show();
+    game.changeBackground(".bodyemu", "../images/MeredithEmuField.png");
     $scope.$apply();
   })
   $(".twentyone").on("click", function (){
@@ -236,6 +241,7 @@ vm.option2war = false;
   $(".thirtytwo").on("click", function (){
     $(this).hide();
     $(".textbox").text("*All the soldiers rush out, guns blazing. They manage to fell a few emus, but most panicked and ran wild. Amidst the fighting, you and the soldiers are trampled by emu! GAME OVER!! Click the arrow to try again.*");
+    game.changeBackground(".bodyemu", "../images/EmuTrample.png");
     $(".twentythree").show();
     $scope.$apply();
   })
@@ -253,8 +259,9 @@ vm.option2end = false;
   })
   $(".twentyfive").on("click", function (){
     $(this).hide();
-    $(".textbox").text("*he volley was fierce with many emus falling. Wounded and beaten, the emus fled. The soldiers let out a hearty cry of victory.*");
+    $(".textbox").text("*The volley was fierce with many emus falling. Wounded and beaten, the emus fled. The soldiers let out a hearty cry of victory.*");
     $(".twentysix").show();
+    game.changeBackground(".bodyemu", "../images/DeadEmus.png");
     $scope.$apply();
   })
   $(".twentysix").on("click", function (){
@@ -283,7 +290,7 @@ vm.option2end = false;
   })
   $(".thirty").on("click", function (){
     $(this).hide();
-    $(".textbox").text("*Should the troops pursue the wounded emus finishing this once and for all or should you hold of a party in celebration?*");
+    $(".textbox").text("*Should the troops pursue the wounded emus, finishing this once and for all or should you hold a party in celebration?*");
     vm.option1end = true;
     vm.option2end = true;
     $scope.$apply();
@@ -309,6 +316,7 @@ vm.option2end = false;
   $(".thirtyseven").on("click", function (){
     $(this).hide();
     $(".textbox").text("*And so you do! Full of sardines and spam, you make your way back to the magic time bus.*");
+    game.changeBackground(".bodyemu", "../images/EmuParty.png");
     $(".thirtyeight").show();
     $scope.$apply();
   })
@@ -322,8 +330,9 @@ vm.option2end = false;
   })
   $(".thirtyfive").on("click", function (){
     $(this).hide();
-    $(".textbox").text("*In the heat of the chase, you fail to notice the troop of kangaroos behind you. Amidst such chaos, the birds flee and you are trampled by fierce kicks. GAME OVER* Click the arrow to try again.");
+    $(".textbox").text("*In the heat of the chase, you fail to notice the troop of kangaroos behind you. Amidst such chaos, the birds flee and you are trampled by fierce kicks. GAME OVER!!! Click the arrow to try again.*");
     $(".thirty").show();
+    game.changeBackground(".bodyemu", "../images/RooTrample.png");
     $scope.$apply();
   })
 
