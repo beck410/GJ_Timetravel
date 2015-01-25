@@ -5,15 +5,20 @@ vm.option1 = false;
 vm.option2 = false;
 vm.option3 = false;
 
+  //INTRO//
   $(".textbox").text("Seems like someone has messed up this time period. Someone helps Van Gogh makeup with his friend Gaugin. Because of this Modern Art is ruined!");
 
   $(".one").show();
-  $(".one").on("click", function (){
+  $(".one").on("click", function() {
     $(".one").hide();
     $(".textbox").text("You arrive in town and know that you must get Van’s ear. You know that at this time his friend Gaugin is in town, you also know Van Gogh frequents a particular bordello.  Do you want to see out Gaugin in case Van Gogh is with him, or visit the bordello?");
     vm.option1 = true;
     $scope.$apply();
   })
+
+// FIRST CHOICE//
+
+//Van GOGH//
   $(".left-1").on("click", function (){
     $(".textbox").text("You: Van Gogh, I’m a huge fan of your work. You mind if I get your autograph?");
     $(".two").show();
@@ -31,6 +36,8 @@ vm.option3 = false;
     $('.textbox').text( "Van Gogh: I was supposed to meet him at the bar, care to accompany me?")
     joinMoment();
   })
+
+  //GAUGIN//
 
   $(".right-1").on("click", function(){
     $('.textbox').text( "You: Gaugin? I’m actually a huge fan of your artwork. You mind if I get your autograph?");
@@ -60,6 +67,8 @@ vm.option3 = false;
     joinMoment();
   })
 
+  //BAR SCENE//
+
   function joinMoment(){
     $('.eight').show();
   }
@@ -82,6 +91,8 @@ vm.option3 = false;
     $('.eleven').show();
   })
 
+//SECOND CHOICE//
+//Choose to Drink//
   $('.eleven').on('click', function(){
     $(this).hide();
     $('.textbox').text('*awkward tension intensifies*');
@@ -96,6 +107,15 @@ vm.option3 = false;
     $scope.$apply();
   })
 
+  $('.thirteen').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Game Over.');
+    $('.eleven').show();
+  })
+
+  //SECOND CHOICE//
+  //Tell him his art sucks!//
+
   $('.left-2').on('click', function(){
     $('.textbox').text('Van Gogh: What I said no such thing, however true it might be!');
     $('.fourteen').show();
@@ -103,11 +123,7 @@ vm.option3 = false;
     $scope.$apply();
   })
 
-  $('.thirteen').on('click', function(){
-    $(this).hide();
-    $('.textbox').text('Game Over.');
-    $('.eleven').show();
-  })
+
 
   $('.fourteen').on('click', function(){
     $(this).hide();
@@ -151,10 +167,22 @@ vm.option3 = false;
     $('.twentyone').show();
   })
 
+  //THIRD CHOICE//
+
   $('.twentyone').on('click', function(){
     $(this).hide();
     $('.textbox').text('You: Well, at least prepare before meeting him...');
     vm.option3 = true;
+    $scope.$apply();
+  })
+
+  //THIRD CHOICE//
+  //Apology//
+
+  $('.middle-3').on('click', function(){
+    $('.textbox').text('You: All you need is a well crafted apology and I’m sure you two can be friends again.');
+    $('.thirtytwo').show();
+    vm.option3 = false;
     $scope.$apply();
   })
 
@@ -165,12 +193,64 @@ vm.option3 = false;
     $scope.$apply();
   })
 
-  $('.middle-3').on('click', function(){
-    $('.textbox').text('You: All you need is a well crafted apology and I’m sure you two can be friends again.');
-    $('.thirtytwo').show();
-    vm.option3 = false;
-    $scope.$apply();
+  $('.thirtytwo').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
+    $('.thirtythree').show();
   })
+
+  $('.thirtythree').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh: There’s no need for such harsh language, I forgive you for your trespasses and invite you to do the same.');
+    $('.thirtyfour').show();
+  })
+
+  $('.thirtyfour').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Gaugin: I forgive you, lets head to the bar (bordello?) and I’ll buy a round for everyone!');
+    $('.thirtyfive').show();
+  })
+
+  $('.thirtyfive').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('*The crowd that had gathered around cheers in excitement and rushes to the bar (bordello?), unfortunately you get trampled by the crowd in the confusion.*')
+    $('.thirtysix').show();
+  })
+
+  $('.thirtysix').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Game Over.');
+    $('.twentyone').show();
+  })
+
+  //THIRD CHOICE//
+  //Pistol//
+  $('.twentyeight').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
+    $('.twentynine').show();
+  })
+
+  $('.twentynine').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh: Yes, we will settle our differences in a tried and true fashion. With violence!');
+    $('.thirty').show();
+  })
+
+  $('.thirty').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Van Gogh pulls out pistol and attempts to shoot Gaugin. Van Gogh is a terrible shot, misses Gaugin and spooks some horses, which trample you to death.');
+    $('.thirtyone').show();
+  })
+
+  $('.thirtyone').on('click', function(){
+    $(this).hide();
+    $('.textbox').text('Game Over.');
+    $('.twentyone').show();
+  })
+
+  //THIRD CHOICE//
+  //Razor//
 
   $('.left-3').on('click', function(){
     $('.textbox').text('You: Take that razor with you, he’ll never see it coming');
@@ -216,65 +296,9 @@ vm.option3 = false;
     $('.thirtyseven').show();
   })
 
-  $('.twentyeight').on('click', function(){
-    $(this).hide();
-    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
-    $('.twentynine').show();
-  })
-
-  $('.twentynine').on('click', function(){
-    $(this).hide();
-    $('.textbox').text('Van Gogh: Yes, we will settle our differences in a tried and true fashion. With violence!');
-    $('.thirty').show();
-  })
-
-  $('.thirty').on('click', function(){
-    $(this).hide();
-    $('.textbox').text('Van Gogh pulls out pistol and attempts to shoot Gaugin. Van Gogh is a terrible shot, misses Gaugin and spooks some horses, which trample you to death.');
-    $('.thirtyone').show();
-  })
-
-  $('.thirtyone').on('click', function(){
-    $(this).hide();
-    $('.textbox').text('Game Over.');
-    $('.twentyone').show();
-  })
-
-  $('.thirtytwo').on('click', function(){
-    $(this).hide();
-    $('.textbox').text('Gaugin: So you showed your scurvy face after all!');
-    $('.thirtythree').show();
-  })
-
-  $('.thirtythree').on('click', function(){
-    $(this).hide();
-    $('.textbox').text('Van Gogh: There’s no need for such harsh language, I forgive you for your trespasses and invite you to do the same.');
-    $('.thirtyfour').show();
-  })
-
-  $('.thirtyfour').on('click', function(){
-    $(this).hide();
-    $('.textbox').text('Gaugin: I forgive you, lets head to the bar (bordello?) and I’ll buy a round for everyone!');
-    $('.thirtyfive').show();
-  })
-
-  $('.thirtyfive').on('click', function(){
-    $(this).hide();
-    $('.textbox').text('*The crowd that had gathered around cheers in excitement and rushes to the bar (bordello?), unfortunately you get trampled by the crowd in the confusion.*')
-    $('.thirtysix').show();
-  })
-
-  $('.thirtysix').on('click', function(){
-    $(this).hide();
-    $('.textbox').text('Game Over.');
-    $('.twentyone').show();
-  })
-
   $('.thirtyseven').on('click', function(){
     $location.path("/" + game.randomizer());
     $scope.$apply();
   })
-
-
 
 });

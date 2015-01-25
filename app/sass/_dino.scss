@@ -1,27 +1,79 @@
 .body-dino {
   width: 100%;
-  height: 400px;
-  background-color: lightblue;
+  height: 100%;
+  background: url('../images/insidebusdino.png');
+  background-repeat: no-repeat;
   z-index: 10;
-}
-
-#dinoImg {
-  width: 200px;
-  height: 350px;
-  background-color: red;
-  z-index: 1;
- 
+  position:relative;
 }
 
 .dino-images {
   position: absolute;
 }
 
-#martaImg {
-  width: 50px;
-  height: 100px;
-  background-color: green;
-  z-index: 1;
+#marta-img {
+  bottom: 0;
+  left: 300px;
+  width: 100%;
+  height: 320px;
+  background: url('../images/MartaLeft.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index:1;
+}
+
+#door-img {
+  background-color: yellow;
+  bottom: 0;
+  width: 150px;
+  height: 300px;
+}
+
+#lever-img {
+  bottom: -30px; 
+  right: 29px; 
+  width: 20px;
+  height: 135px;
+  background: url('../images/lever.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#lever-base-img {
+  bottom: 0; 
+  right: 0px;
+  width: 69px;
+  height: 20px;
+  background: url('../images/LeverBase.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#dino-img {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 380px;
+  display:none;
+  background: url('../images/Dino.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.flipped {
+  left: 0;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
 }
 
 
