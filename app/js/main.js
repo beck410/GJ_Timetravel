@@ -3,6 +3,7 @@
 
   angular.module("TTT", [ "ngRoute" ])
   .controller("mainController", function($location, $scope,startAnimate) {
+    var myFirebaseRef = new Firebase("https://twistedtimetraveller.firebaseio.com//");
 
     $('.textbox').text("You, Marta McFry, wake up and walk to work. You haven’t had your coffee, so the surreality of the landscape doesn’t really sink in. On your desk is a note in messy handwriting.");
     //insert Marta in bed background image
