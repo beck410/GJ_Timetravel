@@ -27,7 +27,7 @@
 
   $('.three').on('click', function(){
     $(this).hide();
-    $('.textbox').text('Mart: I hate Mondays...');
+    $('.textbox').text('Marta: I hate Mondays...');
   })
 
 })
