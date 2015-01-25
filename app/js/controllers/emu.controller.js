@@ -14,6 +14,11 @@ vm.option2pub = false;
     $(this).hide();
     $(".textbox").text("*You find Meridith at a pub despairing over his plight.*");
     $(".two").show();
+    game.changeBackground(".bodyemu", "../images/MeredithatPub.png");
+    $(".bodyemu").css("background-size", "contain");
+    $(".bodyemu").css("background-repeat", "no-repeat");
+
+
     $scope.$apply();
   })
   $(".two").on("click", function (){
